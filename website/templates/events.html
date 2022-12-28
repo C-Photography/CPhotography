@@ -2,14 +2,22 @@
 <title>{% block title%}Events{%endblock%}</title>
 {%block Nav%}
 <ul>
+    {%if user.is_authenticated%}
     <li><a href="/">Home</a></li>
-    <li><a href="/galleries">Galleries</a></li>
+    <li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a class="active" href="/events">Events</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/logout">Logout</a></li>
+    {%else%}
+    <li><a href="/">Home</a></li>
     <li><a href="/services">Services</a></li>
     <li><a class="active" href="/events">Events</a></li>
     <li><a href="/contact">Contact</a></li>
     <li><a href="/login">Login</a></li>
+    <li><a href="/signup">Signup</a></li>
+    {%endif%}
 </ul>
 {%endblock%}
 {%block content%}
-<h2>Events</h2>
 {%endblock%}

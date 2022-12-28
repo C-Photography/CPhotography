@@ -17,7 +17,7 @@ def create_app():
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')#adding dir. path here will add path to url
     
-    from .models import Event, User, Event_Photo, User_Photo
+    from .models import User#, Event, Event_Photo, Gallery, Gallery_Collection, Portfolio, User_Collection
     create_database(app)
 
     login_manager = LoginManager()

@@ -2,38 +2,42 @@
 {% extends "base.html" %} {% block title %}Login{% endblock %}
 {%block Nav%}
 <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/galleries">Galleries</a></li>
-    <li><a href="/services">Services</a></li>
-    <li><a href="/events">Events</a></li>
-    <li><a href="/contact">Contact</a></li>
-    <li><a class="active" href="/login">Login</a></li>
+  <li><a href="/">Home</a></li>
+  <li><a href="/services">Services</a></li>
+  <li><a href="/events">Events</a></li>
+  <li><a href="/contact">Contact</a></li>
+  <li><a class="active" href="/login">Login</a></li>
+  <li><a href="/signup">Signup</a></li>
 </ul>
 {%endblock%}
 {% block content %}
     <form method="POST">
-      <h3 align="center">Login</h3>
-      <div class="form-group">
-        <label for="email">Email Address</label>
+      <br style="color:#2c3e50">
+      <div class="form-group" align="center">
+        <label for="email" style="color:white;">Email Address</label>
         <input
           type="email"
           class="form-control"
           id="email"
           name="email"
           placeholder="Enter email"
+          style="max-width: 350px;"
         />
       </div>
-      <div class="form-group">
-        <label for="password">Password</label>
+      <div class="form-group" align="center">
+        <label for="password" style="color:white;">Password</label>
         <input
           type="password"
           class="form-control"
           id="password"
           name="password"
           placeholder="Enter password"
+          style="max-width: 350px;"
         />
       </div>
       <br />
+      <div align="center">
       <button type="submit" class="btn btn-primary">Login</button>
+    </div>
     </form>
     {% endblock %}

@@ -16,9 +16,9 @@ nav{
 }
 
 .logo{
-    max-width: 150px;
-    padding: 7px 13px;
-    border-radius: 3px;
+    max-width: 130px;
+    padding: none;
+    border-radius: 10px;
 }
 nav ul{
     float: right;
@@ -53,10 +53,6 @@ nav ul li{
   }
 
 @media (max-width: 952px){
-    .logo{
-      padding-left: 50px;
-      max-width: 200px;
-    }
     nav ul li a{
       font-size: 16px;
     }

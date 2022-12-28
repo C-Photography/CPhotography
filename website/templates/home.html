@@ -2,13 +2,21 @@
 <title>{% block title%}Home{%endblock%}</title>
 {%block Nav%}
 <ul>
+    {%if user.is_authenticated%}
     <li><a class="active" href="/">Home</a></li>
-    <li><a href="/galleries">Galleries</a></li>
+    <li><a href="/portfolio">Portfolio</a></li>
+    <li><a href="/services">Services</a></li>
+    <li><a href="/events">Events</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/logout">Logout</a></li>
+    {%else%}
+    <li><a class="active" href="/">Home</a></li>
     <li><a href="/services">Services</a></li>
     <li><a href="/events">Events</a></li>
     <li><a href="/contact">Contact</a></li>
     <li><a href="/login">Login</a></li>
-</ul>
+    <li><a href="/signup">Signup</a></li>
+    {%endif%}
 {%endblock%}
 {%block content%}
 {%endblock%}
