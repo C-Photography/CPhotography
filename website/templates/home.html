@@ -1,5 +1,7 @@
+
 {%extends "base.html" %}<!--uses the base template to be overidden-->
 <title>{% block title%}Home{%endblock%}</title>
+
 {%block Nav%}
 <ul>
     {%if user.is_authenticated%}
@@ -17,6 +19,72 @@
     <li><a href="/login">Login</a></li>
     <li><a href="/signup">Signup</a></li>
     {%endif%}
+</ul>
 {%endblock%}
-{%block content%}
+
+{%block Admin_Upload%}<!--Upload to current collection, previous collection, or create new collection-->
+<form method="POST">
+    <div class="form-group">
+        <label for="new_collection" style="color:white;">New Collection</label>
+        <input
+          type="new_collection"
+          class="form-control"
+          id="new_collection"
+          name="new_collection"
+          placeholder="Enter new collection"
+          style="max-width: 350px;"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Create Collection</button>
+</form>
+
+<form method="POST" enctype="multipart/form-data"> 
+</br>
+</br>
+</br>
+    <div class="form-group">
+        <label for="collection" style="color:white">Choose a collection:</label>
+        <select name="collection" id="collection">
+        <option value="christmas_time">Christmas Time</option>
+        </select>
+    </div>
+    <label style="color:white">Select image:</label>
+    <div class="custom-file" >
+        <input type="file" class="custom-file-input" name="image" id="image" >
+        <label class="custom-file-label" for="image" style="max-width: 350px;">Select image...</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Upload Image</button>
+</form>
+</div>
+{%endblock%}
+
+{%block Guest%} 
+    <section class="gallery" >
+    <div class="slider">
+        <h2 style="color:white" align="center">Gallery</h2>
+        <div class="arrow-scroll">
+            <div class="arrow"></div> 
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+        </div>
+        <h4 style="color:white"align="center">Christmas Time</h4> <!--Collection name-->
+        <div class="images">
+            <input type="radio" name="slide" id="img1" checked>
+            <input type="radio" name="slide" id="img2">
+            <input type="radio" name="slide" id="img3">
+            <input type="radio" name="slide" id="img4">
+
+            <img src="static/christmas1.jpeg" class="m1" alt="img1">
+            <img src="static/christmas2.jpeg" class="m2" alt="img2">
+            <img src="static/christmas3.jpeg" class="m3" alt="img3">
+            <img src="static/christmas4.jpeg" class="m4" alt="img4">
+        </div>
+        <div class="dots">
+            <label for="img1"></label>
+            <label for="img2"></label>
+            <label for="img3"></label>
+            <label for="img4"></label>
+        </div>
+    </div>
+    </section>
 {%endblock%}

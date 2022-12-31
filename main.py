@@ -1,6 +1,6 @@
 from website import create_app
 
-app = create_app()#initialize cookie set/
+app = create_app()#create web app /
 
 
 #run application

@@ -35,6 +35,11 @@
               </button>
             </div>
         {% endif %} {% endfor %} {% endif %} {% endwith %}
-        {%block content%} {%endblock%} 
+
+        {%if user.account_type == 'admin'%}
+          {%block Admin_Upload%} {%endblock%}
+        {%endif%}
+        {%block Guest%} {%endblock%}
+        {%block content%}{%endblock%}
     </body>   
 </html>

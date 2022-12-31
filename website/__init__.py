@@ -6,10 +6,12 @@ from flask_login import LoginManager
 db = SQLAlchemy()
 DB_NAME = "database.db"
 
-def create_app():
+def create_app():#creates app under debugging/development configurations
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'Osceola#2651'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    app.config['IMAGE_UPLOADS'] = "/Users/brendanaguiar/Documents/GitHub/CPhotography/website/static" #pathway for image uploads
+    app.config['ALLOWED_IMAGE_ETENSTIONS'] = ['PNG', 'JPG', 'JPEG', 'GIF']
     db.init_app(app)
     from .views import views
     from .auth import auth

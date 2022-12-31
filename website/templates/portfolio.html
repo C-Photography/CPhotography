@@ -10,5 +10,15 @@
     <li><a href="/logout">Logout</a></li>
 </ul>
 {%endblock%}
-{%block content%}
+{%block Admin_Upload%}
+<form action="/upload-image" method="POST" enctype="multipart/form-data"> 
+    <div class="from-group" style="max-width: 350px;" align="center">
+        <label style="color:white">Select image</label>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" name="image" id="image">
+            <label class="custom-file-label" for="image">Select image...</label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Upload Image</button>
+</form>
 {%endblock%}
